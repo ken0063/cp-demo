@@ -7,7 +7,7 @@ import Loaders from '../component/Loaders';
 interface ViewerData {
   id: string;
   me: {
-    firstName: [];
+    firstName: string;
     lastName: string;
     email: string;
     phone: string;

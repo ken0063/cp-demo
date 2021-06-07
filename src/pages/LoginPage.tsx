@@ -1,12 +1,13 @@
-import { Field, Form, Formik } from 'formik';
+import { Form, Formik } from 'formik';
 import React, { useEffect, useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { toast } from 'react-toastify';
 import { LOGIN_MUTATION } from '../providers/queries';
-import { LoginSAchema } from './LoginSAchema';
+import { LoginSchema } from './LoginSchema';
 import { useHistory } from 'react-router';
 import { AUTH_TOKEN } from '../utils/consts';
 import Loaders from '../component/Loaders';
+import TextInput from '../component/TextInput';
 
 interface LoginDetails {
   email: string;
@@ -69,7 +70,7 @@ const LoginPage: React.FC = () => {
           setError(error);
         }
       }}
-      validationSchema={LoginSAchema}
+      validationSchema={LoginSchema}
     >
       <div className="flex flex-col h-screen w-full max-w-screen-3xl bg-gray-700 items-center justify-center">
         {loading ? (
@@ -80,7 +81,7 @@ const LoginPage: React.FC = () => {
               Sign in to your account
             </span>
             {error ? <p>{error}</p> : ''}
-            <Field
+            <TextInput
               type="email"
               name="email"
               placeholder="Enter Your Email"
@@ -89,7 +90,7 @@ const LoginPage: React.FC = () => {
               outline-none"
             />
 
-            <Field
+            <TextInput
               type="password"
               name="password"
               placeholder="Enter Your Password"
@@ -97,7 +98,6 @@ const LoginPage: React.FC = () => {
                placeholder-gray-400 w-3/4 py-2
               outline-none"
             />
-
             <button
               type="submit"
               className="bg-red-600 hover:bg-red-700 p-2 w-40 text-white font-medium rounded outline-none focus:outline-none cursor-pointer"

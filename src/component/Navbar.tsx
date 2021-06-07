@@ -20,7 +20,7 @@ const Navbar = () => {
             <img
               src="https://ignite-api.s3.us-east-2.amazonaws.com/merchant-logos/staging/bankonphone-logo.png"
               alt="logo"
-              className="w-36 h-10"
+              className="w-44 h-10"
             />
           </Link>
         </div>

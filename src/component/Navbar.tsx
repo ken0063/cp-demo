@@ -16,7 +16,7 @@ const Navbar = () => {
     <>
       <div className="flex justify-between py-5 px-32">
         <div>
-          <Link to="/dashboard">
+          <Link to="/dash-board">
             <img
               src="https://ignite-api.s3.us-east-2.amazonaws.com/merchant-logos/staging/bankonphone-logo.png"
               alt="logo"

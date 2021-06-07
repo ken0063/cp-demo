@@ -11,3 +11,27 @@ export const LOGIN_MUTATION = gql`
     }
   }
 `;
+export const fragments = {
+  user: gql`
+    fragment UserDetails on User {
+      id
+      firstName
+      lastName
+      email
+      phone
+      status
+    }
+  `,
+};
+
+export const VIEWER_QUERY = gql`
+  query ViewerQuery {
+    viewer {
+      id
+      me {
+        ...UserDetails
+      }
+    }
+  }
+  ${fragments.user}
+`;

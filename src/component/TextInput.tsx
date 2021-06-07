@@ -9,10 +9,16 @@ interface InputProps {
 }
 
 const TextInput: React.FC<InputProps> = ({ name, type, ...restProps }) => {
-  const [field, meta] = useField({ name });
+  const [field, meta] = useField({ name, type });
   return (
     <>
-      <Field error={meta.touched && !!meta.error} {...field} {...restProps} />
+      <Field
+        error={meta.touched && !!meta.error}
+        {...field}
+        {...restProps}
+        type={type}
+        name={name}
+      />
       {meta.touched && meta.error ? (
         <p className="text-red-500 -mt-10 w-3/4">
           <b>{meta.error}</b>

@@ -9,7 +9,7 @@ export const LoginSchema = yup.object().shape({
     .string()
     .required('Field is required')
     .matches(
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,20})/,
+      /^(?=.*[a-z])(?=.{6,20})/,
       'Password must be at least 6 characters and must contain a digit, a lowercase character and an uppercase character',
     ),
 });
